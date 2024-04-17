@@ -1,0 +1,140 @@
+{
+    "Title": "Dungeon Life",
+    "Credits": "Created by Anthony Nguyen (anguy410@ucsc.edu).",
+    "InitialLocation": "Dark Room",
+    "Locations": {
+        "Dark Room": {
+            "Body": "You wake up in a room with a door in front of you. Do you open it?",
+            "Choices": [
+                {
+                    "Text": "Yes",
+                    "Target": "Room 1"
+                },
+                {
+                    "Text": "No",
+                    "Target": "Death Room"
+                }
+            ]
+        },
+        "Room 1": {
+            "Body": "As you open the door in front of you all you can see are 2 paths. One that leads you to a forest and the other taking you to hell. \nWhich path do you take?",
+            "Choices": [
+                {
+                    "Text": "Forest",
+                    "Target": "Forest Room"
+                },
+                {
+                    "Text": "Hell",
+                    "Target": "Hell Room"
+                }
+            ]
+        },
+        "Forest Room": {
+            "Body": "You enter the lovely forest, seeing some trees, a lake, and a dog. The dog stares at you intently",
+            "Choices": [
+                {
+                    "Text": "Go Back",
+                    "Target": "Room 1"
+                },
+                {
+                    "Text": "Pet Dog",
+                    "Target": "Pet Dog"
+                }
+            ]
+        },
+        "Pet Dog": { 
+            "Body": "You start petting the dog...",
+            "Items": {
+                "doorKey": "A shiny key dropped by the dog."
+            },
+            "Choices": [
+                {
+                    "Text": "Go Back",
+                    "Target": "Room 1"
+                }
+            ]
+        },
+        "Hell Room": {
+            "Body": "You are in a very hot area, but luckily you come across a path that leads to a cooler area and a very suspicious locked door",
+            "Choices": [
+                {
+                    "Text":"Go Back",
+                    "Target":"Room 1"
+                },
+                {
+                    "Text": "Unlock Door",
+                    "Target": "UnLocked Room",
+                    "RequiredItem": "doorKey"
+                },
+                {
+                    "Text": "Snow",
+                    "Target": "Snow Room"
+                }
+            ]
+        },
+        "Snow Room": {
+            "Body": "It's pretty cold and you come across a destoryed snowman looks like it could use some help.",
+            "Choices": [
+                {
+                    "Text":"Go Back",
+                    "Target":"Hell Room"
+                },
+                {
+                    "Text": "Help snowman",
+                    "Target": "Snowman"
+                }
+            ]
+        },
+        "Snowman": {
+            "Body": "You rebuilt the snowman...",
+            "Items": {
+                "chestKey": "A shiny key given by the snowman."
+            },
+            "Choices": [
+                {
+                    "Text": "Go Back",
+                    "Target": "Snow Room"
+                }
+            ]
+        },
+        "UnLocked Room": {
+            "Body": "In the unlocked rooom you find a locked chest, and wonder if it holds any value.",
+            "Choices": [
+                {
+                    "Text": "Go Back",
+                    "Target": "Hell Room"
+                },
+                {
+                    "Text": "Unlock Chest",
+                    "Target": "Unlock Chest",
+                    "RequiredItem": "chestKey"
+                }
+            ]
+        },
+        "Unlock Chest": {
+            "Body": "Wow, you unlocked the chest and now you have a bunch of gold...",
+            "Choices": [
+                {
+                    "Text": "Collect Gold",
+                    "Target": "End"
+                }
+            ]
+        },
+        "Death Room": {
+            "Body": "You've died from starvation since you never opened that door...",
+            "Choices": [
+                {
+                    "Text": "Yes",
+                    "Target": "Dark Room"
+                },
+                {
+                    "Text": "No",
+                    "Target": "End"
+                }
+            ]
+        },
+        "End": {
+            "Body": "Thank you for playing! Restart to play again."
+        }
+    }
+}
